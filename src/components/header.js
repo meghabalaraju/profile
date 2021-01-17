@@ -21,7 +21,6 @@ const FlexBox = styled(Box)(({ theme }) => ({
 
 const useStyles = makeStyles({
   uMarignBottom: {
-    marginBottom: 20,
     marginTop: 20,
   },
 })
@@ -29,17 +28,18 @@ const useStyles = makeStyles({
 const Header = () => {
   const classes = useStyles()
   return (
-    <>
-      <Container maxWidth="lg">
-        <FlexBox className={classes.uMarignBottom}>
-          <Sitelogo />
-          <div>
-            <TextButton>About Me</TextButton>
-            <TextButton>Projects</TextButton>
-          </div>
-        </FlexBox>
-      </Container>
-    </>
+    <Container
+      maxWidth="xl"
+      style={{ margin: `0px auto 170px auto`, padding: `0px 200px` }}
+    >
+      <FlexBox className={classes.uMarignBottom}>
+        <Sitelogo />
+        <div>
+          <TextButton>About Me</TextButton>
+          <TextButton>Projects</TextButton>
+        </div>
+      </FlexBox>
+    </Container>
   )
 }
 
