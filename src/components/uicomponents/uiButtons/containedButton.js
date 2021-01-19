@@ -7,7 +7,7 @@ const PortflioButton = styled(Button)({
   border: 0,
   borderRadius: 3,
   boxShadow: "0 3px 5px 2px rgba(70, 59, 73, .3)",
-  color: "#F0F0F0",
+  color: "#DBDBDB",
   height: 38,
   padding: "0 20px",
   fontWeight: 500,

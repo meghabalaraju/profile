@@ -7,7 +7,7 @@ const PortfolioOutlinedButton = styled(Button)({
   borderStyle: "solid",
   borderColor: "#06A96B",
   borderRadius: 3,
-  color: "#06A96B",
+  color: "#DBDBDB",
   height: 38,
   padding: "0 20px",
   fontWeight: 500,

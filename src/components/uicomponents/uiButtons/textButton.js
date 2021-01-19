@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button"
 
 const PortfolioTextButton = styled(Button)({
   border: "none",
-  color: "#BCBCBC",
+  color: "#DBDBDB",
   height: 38,
   padding: "0 20px",
   fontWeight: 500,
