@@ -3,7 +3,7 @@ import Sitelogo from "../svg/sitelogo.svg"
 import { styled } from "@material-ui/core/styles"
 import { Container, Box, makeStyles } from "@material-ui/core"
 import TextButton from "./uicomponents/uiButtons/textButton"
-import theme from "../gatsby-theme-material-ui-top-layout/theme"
+import { Link } from "gatsby"
 
 const HeaderLayout = styled(Container)(({ theme, maxWidth }) => ({
   maxWidth: maxWidth,
@@ -51,13 +51,17 @@ const useStyles = makeStyles(theme => ({
     marginTop: 20,
   },
   textBgTransition: {
-    marginRight: "20px",
-    borderBottom: "2px solid #06A96B",
+    "&.active": {
+      color: "red",
+    },
   },
   siteLogo: {
     [theme.breakpoints.down("xs")]: {
       marginBottom: "10px",
     },
+  },
+  active: {
+    borderBottom: "1px solid #06A96B",
   },
 }))
 
@@ -66,10 +70,12 @@ const Header = () => {
   return (
     <HeaderLayout maxWidth="xl">
       <FlexBox className={classes.uMarignBottom}>
-        <Sitelogo className={classes.siteLogo} />
+        <Link to="/">
+          <Sitelogo className={classes.siteLogo} />{" "}
+        </Link>
         <div>
-          <TextButton>About Me</TextButton>
-          <TextButton>Projects</TextButton>
+          <TextButton to="/about">About Me</TextButton>
+          <TextButton to="/projects">Projects</TextButton>
         </div>
       </FlexBox>
     </HeaderLayout>
