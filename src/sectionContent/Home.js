@@ -7,6 +7,7 @@ import PortIconButton from "../components/uicomponents/uiButtons/iconButton"
 import { IoLogoGithub, IoDocumentTextOutline } from "react-icons/io5"
 import { GrLinkedinOption } from "react-icons/gr"
 import { HiOutlineMail } from "react-icons/hi"
+import TopLayout from "../gatsby-theme-material-ui-top-layout/components/top-layout"
 
 const FlexBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -52,9 +53,6 @@ const useStyles = makeStyles(theme => ({
   uMarginRight: {
     marginRight: "10px",
   },
-  uMarginBottom: {
-    marginBottom: "10px",
-  },
 }))
 
 const Home = () => {
@@ -62,7 +60,7 @@ const Home = () => {
   const data = useStaticQuery(graphql`
     {
       contentfulAsset {
-        localFile {
+        file {
           url
         }
       }
@@ -84,32 +82,45 @@ const Home = () => {
     }
   `)
   return (
-    <FlexBox>
-      <div className={classes.description}>
-        <h1 className={classes.desHeader}>
-          Hi, I'm {data.contentfulPortfolio.firstname}!
-        </h1>
-        <p className={classes.desPara}>
-          {
-            data.contentfulPortfolio.personalityDescription
-              .personalityDescription
-          }
-        </p>
-        <PortIconButton className={classes.uMarginRight}>
-          <IoLogoGithub />
-        </PortIconButton>
-        <PortIconButton className={classes.uMarginRight}>
-          <GrLinkedinOption />
-        </PortIconButton>
-        <PortIconButton className={classes.uMarginRight}>
-          <HiOutlineMail />
-        </PortIconButton>
-        <PortIconButton>
-          <IoDocumentTextOutline />
-        </PortIconButton>
-      </div>
-      <Responsive className={classes.homeLogo} />
-    </FlexBox>
+    <TopLayout>
+      <FlexBox>
+        <div className={classes.description}>
+          <h1 className={classes.desHeader}>
+            Hi, I'm {data.contentfulPortfolio.firstname}!
+          </h1>
+          <p className={classes.desPara}>
+            {
+              data.contentfulPortfolio.personalityDescription
+                .personalityDescription
+            }
+          </p>
+          <PortIconButton
+            className={classes.uMarginRight}
+            href={data.contentfulPortfolio.contact.github}
+            target="_blank"
+          >
+            <IoLogoGithub />
+          </PortIconButton>
+          <PortIconButton
+            className={classes.uMarginRight}
+            href={data.contentfulPortfolio.contact.linkedin}
+            target="_blank"
+          >
+            <GrLinkedinOption />
+          </PortIconButton>
+          <PortIconButton
+            className={classes.uMarginRight}
+            href={`mailto:${data.contentfulPortfolio.contact.mail}`}
+          >
+            <HiOutlineMail />
+          </PortIconButton>
+          <PortIconButton href={data.contentfulAsset.file.url} target="_blank">
+            <IoDocumentTextOutline />
+          </PortIconButton>
+        </div>
+        <Responsive className={classes.homeLogo} />
+      </FlexBox>
+    </TopLayout>
   )
 }
 
