@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function TextButton({ children, className = {}, to, location }) {
+export default function TextButton({ children, className, to }) {
   const isActive = ({ isCurrent }) => {
     return isCurrent ? { className: classes.active } : {}
   }
