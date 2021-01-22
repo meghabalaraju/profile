@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   desHeader: {
     letterSpacing: "0.11rem",
+    color: "#FFFFFF",
     [theme.breakpoints.down("md")]: {
       fontSize: "1.5rem",
       fontWeight: 500,
@@ -49,6 +50,7 @@ const useStyles = makeStyles(theme => ({
   desPara: {
     letterSpacing: "0.11rem",
     marginBottom: "50px",
+    color: "#FFFFFF",
   },
   uMarginRight: {
     marginRight: "10px",

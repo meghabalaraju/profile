@@ -34,6 +34,7 @@ const useStyles = makeStyles(theme => ({
   header: {
     fontFamily: '"QuickSand", sans-serif',
     marginTop: `-40px`,
+    color: "#FFFFFF",
     [theme.breakpoints.down("md")]: {
       margin: "40px 0px 0px 40px",
     },
@@ -77,6 +78,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     "& > p": {
+      color: "#FFFFFF",
       [theme.breakpoints.down("sm")]: {
         fontSize: 14,
       },

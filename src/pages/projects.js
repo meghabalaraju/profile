@@ -6,7 +6,7 @@ import ContainedBtn from "../components/uicomponents/uiButtons/containedButton"
 const ProjectPage = () => (
   <Layout>
     <SEO title="Projects" />
-    <h1>Projects</h1>
+    <h1 style={{ color: "#FFFFFF" }}>Projects</h1>
     <ContainedBtn>COMING SOON</ContainedBtn>
   </Layout>
 )
