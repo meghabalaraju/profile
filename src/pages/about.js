@@ -16,25 +16,71 @@ const FlexBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
 
   // media query using Mui
-  // [theme.breakpoints.down("sm")]: {
-  //   flexDirection: "column",
-  //   textAlign: "center",
-  // },
 
-  // [theme.breakpoints.down("xs")]: {
-  //   flexDirection: "column",
-  //   textAlign: "center",
-  // },
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "unset",
+  },
+
+  [theme.breakpoints.down("xs")]: {
+    flexDirection: "column",
+    textAlign: "center",
+  },
 }))
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  header: {
+    fontFamily: '"QuickSand", sans-serif',
+    marginTop: `-40px`,
+    [theme.breakpoints.down("md")]: {
+      margin: "40px 0px 0px 40px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
   imageMe: {
     flex: "0 1 20%",
+    [theme.breakpoints.down("sm")]: {
+      width: "30%",
+      margin: "0px auto",
+      padding: "0px 0px 30px 0px",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      width: "40%",
+    },
   },
 
   descriptionMe: {
     flex: "1 1 55%",
     padding: "20px 150px 20px 170px",
+
+    // lg - 1280px , xl - 1920px
+
+    [theme.breakpoints.down("lg")]: {
+      padding: "20px 40px 20px 100px",
+    },
+
+    [theme.breakpoints.down("md")]: {
+      padding: "20px 90px 20px 100px",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px 30px 20px 30px",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      padding: "10px",
+    },
+
+    "& > p": {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: 14,
+      },
+    },
   },
   toProjects: {
     display: "flex",
@@ -42,6 +88,11 @@ const useStyles = makeStyles({
     width: "100%",
     justifyContent: "space-between",
     marginTop: "50px",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "unset",
+      justifyContent: "center",
+    },
   },
   hr: {
     border: 0,
@@ -50,8 +101,15 @@ const useStyles = makeStyles({
     backgroundImage: "linear-gradient(to right, #808080, #ccc, #808080)",
     width: "60%",
     paddingRight: "20px",
+
+    [theme.breakpoints.down("md")]: {
+      width: "40%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
-})
+}))
 
 const AboutPage = () => {
   const classes = useStyles()
@@ -69,9 +127,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About Me" />
-      <h1 style={{ fontFamily: '"QuickSand", sans-serif', marginTop: `-40px` }}>
-        About Me
-      </h1>
+      <h1 className={classes.header}>About Me</h1>
       <FlexBox>
         <div className={classes.imageMe}>
           <Image />
