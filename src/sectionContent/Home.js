@@ -4,7 +4,7 @@ import { styled } from "@material-ui/core/styles"
 import { useStaticQuery, graphql } from "gatsby"
 import Responsive from "../svg/responsive.svg"
 import PortIconButton from "../components/uicomponents/uiButtons/iconButton"
-import { IoLogoGithub, IoDocumentTextOutline } from "react-icons/io5"
+import { IoLogoGithub } from "react-icons/io5"
 import { GrLinkedinOption } from "react-icons/gr"
 import { HiOutlineMail } from "react-icons/hi"
 import TopLayout from "../gatsby-theme-material-ui-top-layout/components/top-layout"
@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     color: "#FFFFFF",
   },
   uMarginRight: {
-    marginRight: "10px",
+    marginRight: "15px",
   },
 }))
 
@@ -61,11 +61,6 @@ const Home = () => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     {
-      contentfulAsset {
-        file {
-          url
-        }
-      }
       contentfulPortfolio {
         firstname
         profession
@@ -111,13 +106,9 @@ const Home = () => {
             <GrLinkedinOption />
           </PortIconButton>
           <PortIconButton
-            className={classes.uMarginRight}
             href={`mailto:${data.contentfulPortfolio.contact.mail}`}
           >
             <HiOutlineMail />
-          </PortIconButton>
-          <PortIconButton href={data.contentfulAsset.file.url} target="_blank">
-            <IoDocumentTextOutline />
           </PortIconButton>
         </div>
         <Responsive className={classes.homeLogo} />
