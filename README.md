@@ -3,15 +3,21 @@
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="src/images/site-logo.png" width="60" />
   </a>
+  <br/><br/>
+  <span>Megha's portfolio webpage</span>
 </p>
-<h1 align="center"></h1>
+
+<!-- Installation procedure -->
 
 ## 🚀 Quick start
 
-    ```shell
-    # Make sure to clone this repository from
-    git clone https://github.com/meghabalaraju/profile.git
-    ```
+```shell
+  # Make sure to clone this repository from
+
+  git clone https://github.com/meghabalaraju/profile.git
+```
+
+&nbsp;
 
 1.  **Install dependencies in package.json.**
 
@@ -19,6 +25,7 @@
 
     ```shell
     cd profile/
+
     npm install
     ```
 
@@ -28,13 +35,15 @@
     gatsby develop
     ```
 
-## 🎓 Learning Gatsby
+<!-- Links license -->
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+&nbsp;
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+## 🎓 License
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+This project is licensed under the terms of the [MIT license](https://github.com/meghabalaraju/profile/blob/main/LICENSE)
+
+&nbsp;
 
 ## 💫 Deploy
 
